@@ -1,4 +1,4 @@
-define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qualtrics/qbiat6.js'], function(APIConstructor, iatExtension){
+define(['pipAPI', 'https://chiaracode.github.io/code1'], function(APIConstructor, iatExtension){
  var API = new APIConstructor();
 
 	
