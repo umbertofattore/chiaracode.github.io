@@ -1,22 +1,22 @@
 Qualtrics.SurveyEngine.addOnload(function () {
-    var container = this.getQuestionContainer();
-    container.querySelector('.Inner').style.display = 'none';
-    this.hideNextButton();
-    var scriptTag = document.createElement('script');
-    scriptTag.src = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
-    scriptTag.onload = onLoad;
-    scriptTag.onreadystatechange = onLoad;
-    container.appendChild(scriptTag);
-   var canvas = document.createElement('div');
-    container.appendChild(canvas);
-    var proceed = this.clickNextButton.bind(this);
-    function onLoad() {minnoJS(canvas, 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qualtrics/exampleBIATimage.js');
-    minnoJS.logger = function (value) {
-            var el = container.querySelector('textarea');
+var container = this.getQuestionContainer();
+container.querySelector('.Inner').style.display = 'none';
+this.hideNextButton();
+var scriptTag = document.createElement('script');
+scriptTag.src = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
+scriptTag.onload = onLoad;
+scriptTag.onreadystatechange = onLoad;
+container.appendChild(scriptTag);
+var canvas = document.createElement('div');
+container.appendChild(canvas);
+var proceed = this.clickNextButton.bind(this);
+function onLoad() {minnoJS(canvas, 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qualtrics/exampleBIATimage.js');
+minnoJS.logger = function (value) {
+var el = container.querySelector('textarea');
             el.value = value;
-        }
+       }
         
-        minnoJS.onEnd = function () { setTimeout(proceed, 100); }
+minnoJS.onEnd = function () { setTimeout(proceed, 100); }
     }
 });
 
