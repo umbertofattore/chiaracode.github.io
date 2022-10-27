@@ -1,32 +1,9 @@
-Qualtrics.SurveyEngine.addOnload(function () {
-var container = this.getQuestionContainer();
-container.querySelector('.Inner').style.display = 'none';
-this.hideNextButton();
-var scriptTag = document.createElement('script');
-scriptTag.src = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
-scriptTag.onload = onLoad;
-scriptTag.onreadystatechange = onLoad;
-container.appendChild(scriptTag);
-var canvas = document.createElement('div');
-container.appendChild(canvas);
-var proceed = this.clickNextButton.bind(this);
-function onLoad() {minnoJS(canvas, 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qualtrics/exampleBIATimage.js');
-minnoJS.logger = function (value) {
-var el = container.querySelector('textarea');
-            el.value = value;
-       }
-        
-minnoJS.onEnd = function () { setTimeout(proceed, 100); }
-    }
-});
-
-define(['pipAPI','https://chiaracode.github.io/'], function(APIConstructor, iatExtension){
-  var API = new APIConstructor();
-
-	
-	return iatExtension({
+define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qualtrics/qbiat6.js'], function(APIConstructor, iatExtension){
+ var API = new APIConstructor();
+ return iatExtension({
 		practiceCategory1 : 
 			{
+	
 				name : 'Mammals', //Will appear in the data.
 				title : {
 					media : {word : 'Mammals'}, //Name of the category presented in the task.
