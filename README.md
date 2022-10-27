@@ -17,7 +17,7 @@ Qualtrics.SurveyEngine.addOnload(function () {
     // This function gets activated only after MinnoJS is loaded
     function onLoad() {
         // Run your study (just set the correct URL)
-        minnoJS(canvas, 'https://chiaracode.github.io/');
+        minnoJS(canvas, 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qualtrics/exampleBIATimage.js');
         // MinnoJS doesn't know about Qualtrics, we pass a function to inject the results into the question
         // For some reason `piGlobal` isn't available so we attach it to `minnoJS`
         minnoJS.logger = function (value) {
@@ -27,8 +27,8 @@ Qualtrics.SurveyEngine.addOnload(function () {
         // At the end of the study let MinnoJS proceed to the next question
         // We need to wait a few miliseconds for Qualtrics to register the value that we entered
         minnoJS.onEnd = function () { setTimeout(proceed, 100); }
-	
-
+    }
+});
 
 define(['pipAPI','https://chiaracode.github.io/'], function(APIConstructor, iatExtension){
   var API = new APIConstructor();
