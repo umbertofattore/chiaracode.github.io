@@ -1,7 +1,8 @@
-define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qualtrics/qbiat6.js'], function(APIConstructor, iatExtension){
- var API = new APIConstructor();
+define(['pipAPI', 'https://chiaracode.github.io/'], function(APIConstructor, iatExtension){
+  var API = new APIConstructor();
 
-return iatExtension({
+	
+	return iatExtension({
 		practiceCategory1 : 
 			{
 				name : 'Mammals', //Will appear in the data.
@@ -58,7 +59,7 @@ return iatExtension({
 						//If you're using a startStimulus, set here. If not, set the parameter showStimuliWithInst to false (see later below)
 						media : {image : 'blacks.jpg'}, 
 							css : {color:'#31b404','font-size':'1em'}, 
-							height : 13
+							height : 2
 						}
 					}, 
 					stimulusMedia : [ //Stimuli content as PIP's media objects
@@ -81,7 +82,7 @@ return iatExtension({
 						startStimulus : {
 							media : {image : 'whites.jpg'},  
 							css : {color:'#31b404','font-size':'1em'}, 
-							height : 13
+							height : 2
 						}
 					}, 
 					stimulusMedia : [ //Stimuli content as PIP's media objects
