@@ -138,9 +138,9 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			],
 			attribute1 : 
 			{
-				name : 'Pleasant', 
+				name : 'Pleasant1', 
 				title : {
-					media : {word : 'Pleasant'}, 
+					media : {word : 'Pleasant1'}, 
 					css : {color:'#0000FF','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
