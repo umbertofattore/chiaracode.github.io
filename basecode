@@ -138,44 +138,44 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			],
 			attribute1 : 
 			{
-				name : 'Pleasant1', 
+				name : 'Vittima di discriminazione', 
 				title : {
-					media : {word : 'Pleasant1'}, 
+					media : {word : 'Vittima di discriminazione'}, 
 					css : {color:'#0000FF','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
-						media : {word : 'Joy, Love, Happy, Good'}, 
+						media : {word : 'Vittima, Bersaglio, Oppresso, Discriminato'}, 
 						css : {color:'#0000FF','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word : 'Joy'}, 
-					{word : 'Love'}, 
-					{word : 'Happy'}, 
-					{word : 'Good'}
+					{word : 'Vittima'}, 
+					{word : 'Bersaglio'}, 
+					{word : 'Oppresso'}, 
+					{word : 'Discriminato'}
 				], 
 				//Stimulus css
 				stimulusCss : {color:'#0000FF','font-size':'2em'}
 			},	
 			attribute2 : 
 			{
-				name : 'Unpleasant', 
+				name : 'Autore di discriminazione', 
 				title : {
-					media : {word : 'Unpleasant'}, 
+					media : {word : 'Autore di discriminazione'}, 
 					css : {color:'#0000FF','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
-						media : {word : 'Horrible, Evil, Nasty, Bad'}, 
+						media : {word : 'Autore, Perpetratore, Aggressore, Sessista'}, 
 						css : {color:'#0000FF','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word : 'Horrible'}, 
-					{word : 'Nasty'}, 
-					{word : 'Bad'}, 
-					{word : 'Evil'}
+					{word : 'Autore'}, 
+					{word : 'Perpetratore'}, 
+					{word : 'Aggressore'}, 
+					{word : 'Sessista'}
 				], 
 				//Stimulus css
 				stimulusCss : {color:'#0000FF','font-size':'2em'} 
