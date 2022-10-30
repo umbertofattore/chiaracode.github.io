@@ -5,9 +5,9 @@ define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qual
 	return iatExtension({
 		practiceCategory1 : 
 			{
-				name : 'Umberti', //Will appear in the data.
+				name : 'Uomo', //Will appear in the data.
 				title : {
-					media : {word : 'Umberti'}, //Name of the category presented in the task.
+					media : {word : 'Donna'}, //Name of the category presented in the task.
 					css : {color:'#31b404','font-size':'1.8em'}, //Style of the category title.
 					height : 4, //Height (because we need to know where to put the next item in the title)
 					startStimulus : { 
@@ -28,9 +28,9 @@ define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/qual
 			},	
 			practiceCategory2 : 
 			{
-				name : 'Chiare', 
+				name : 'Donna', 
 				title : {
-					media : {word : 'Chiare'}, 
+					media : {word : 'Donna'}, 
 					css : {color:'#31b404','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
