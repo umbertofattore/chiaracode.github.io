@@ -71,7 +71,7 @@ function(APIConstructor, batExtension){
 		fb_slight_Att1WithCatA_Att2WithCatB : 'Your data suggest a slight association CATEGORYA-Target and CATEGORYB-Perpetrator.'
 
 		
-		
+		} 
 		
 	});
 });
