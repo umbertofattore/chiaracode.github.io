@@ -363,21 +363,21 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
                         ]; });
                 //console.log('mapped');
                 //Add a line with the feedback, score and block-order condition
-                content.push([
-                            9, //'block'
-                            999, //'trial'
-                            'end', //'cond'
-                       //     '', //'comp'
-                            '', //'type'
-                            '', //'cat'
-                            '', //'stim'
-                            '', //'resp'
-                            '', //'err'
-                            '', //'rt'
-                           
-                            piCurrent.feedback //'fb'
-                           
-                        ]);
+                //content.push([
+                //            9, //'block'
+                //            999, //'trial'
+                //            'end', //'cond'
+                //       //     '', //'comp'
+                //            '', //'type'
+                //            '', //'cat'
+                //            '', //'stim'
+                //            '', //'resp'
+                //            '', //'err'
+                //            '', //'rt'
+                //           
+                //            piCurrent.feedback //'fb'
+                //           
+                //        ]);
                 //console.log('added');
                         
                 content.unshift(headers);
