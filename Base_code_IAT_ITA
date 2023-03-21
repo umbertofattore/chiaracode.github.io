@@ -300,13 +300,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		
 		// extend the current object with the default
 		_.defaults(piCurrent, options, batObj);
-	// are we on the touch version
-		var isTouch = piCurrent.isTouch;
-		//We use the attribute names a lot, so let's read them here
-		var attribute1 = piCurrent.attribute1;
-		var attribute2 = piCurrent.attribute2;
-		var cats = piCurrent.categories;
 		_.extend(API.script.settings, options.settings);
+		
 	
 	        /**
         **** For Qualtrics
