@@ -235,7 +235,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			rightKeyTextTouch : 'Left for all else', 
 			leftKeyTextTouch : 'Right if item belongs', 
 			//Text and style for the separator between the top and bottom category labels.
-			orText : 'E', 
+			orText : 'or', 
 			orCss : {'font-size':'1.8em', color:'#000000'},
 			
 			instWidth : 99, //The width of the instructions stimulus
