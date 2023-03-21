@@ -1,4 +1,4 @@
-define(['pipAPI', '/implicit/user/mmarini/mensrights_italy/extension_gender.js'], 
+define(['pipAPI', 'https://chiaracode.github.io/Basecode_Tp'], 
 
 function(APIConstructor, batExtension){
     var API = new APIConstructor();
