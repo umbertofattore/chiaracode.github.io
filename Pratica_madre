@@ -288,8 +288,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		var attribute2 = piCurrent.attribute2;
 		var cats = piCurrent.categories;
 
-		
-        /**
+		        /**
         **** For Qualtrics
         */
         API.addSettings('onEnd', window.minnoJS.onEnd);
@@ -1305,4 +1304,4 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 	}
 		
 	return iatExtension;
-
+});
