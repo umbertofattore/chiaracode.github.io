@@ -20,6 +20,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 	Run the task in order to learn about the name of these variables, when they are saved at the explicit table.
 	
 	Created by: Yoav Bar-Anan (baranan@gmail.com).
+	Modified by: Gal Maimon
 	**/
 
 	function iatExtension(options)
@@ -31,7 +32,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		//You can also do that from the outside, with a dedicated jsp file.
 		var batObj = 
 		{
-			isTouch:false, //Set whether the task is on a touch device.
+			istouch:false, //Set whether the task is on a touch device.
 			//Set the canvas of the task
 			canvas : {
 				maxWidth: 725,
@@ -88,90 +89,99 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			},
 			categories : [  //As many categories you need.
 				{
-					name : 'category1', //Will appear in the data.
+					name : 'Black people', //Will appear in the data.
 					title : {
-						media : {word : 'Category1'}, //Name of the category presented in the task.
+						media : {word : 'Black people'}, //Name of the category presented in the task.
 						css : {color:'#31b404','font-size':'1.8em'}, //Style of the category title.
 						height : 4, //Height (because we need to know where to put the next item in the title)
 						startStimulus : { 
 						//If you're using a startStimulus, set here. If not, set the parameter showStimuliWithInst to false (see later below)
-							media : {word : 'cat1A, cat1B'}, 
+							media : {word : 'Tyron, Malik, Terrell, Jazmin, Tiara, Shanice'}, 
 							css : {color:'#31b404','font-size':'1em'}, 
 							height : 2
 						}
 					}, 
 					stimulusMedia : [ //Stimuli content as PIP's media objects
-						{word : 'cat1A'}, 
-						{word : 'cat1B'}
+                    {word: 'Tyron'},
+					{word: 'Malik'},
+					{word: 'Terrell'},
+					{word: 'Jazmin'},
+					{word: 'Tiara'},
+					{word: 'Shanice'}
 					], 
 					//Stimulus css (style of the stimuli)
 					stimulusCss : {color:'#31b404','font-size':'2em'}
 				},	
 				{
-					name : 'category2', 
+					name : 'White people', 
 					title : {
-						media : {word : 'Category2'}, 
+						media : {word : 'White people'}, 
 						css : {color:'#31b404','font-size':'1.8em'}, 
 						height : 4,
 						startStimulus : {
-							media : {word : 'cat2A, cat2B'}, 
+							media : {word : 'Jake, Connor, Bradley, Alison,Emma, Emily'}, 
 							css : {color:'#31b404','font-size':'1em'}, 
 							height : 2
 						}
 					}, 
 					stimulusMedia : [ //Stimuli content as PIP's media objects
-						{word : 'cat2A'}, 
-						{word : 'cat2B'}
+                    {word: 'Jake'},
+					{word: 'Connor'},
+					{word: 'Bradley'},
+					{word: 'Allison'},
+					{word: 'Emma'},
+					{word: 'Emily'}
 					], 
 					//Stimulus css
 					stimulusCss : {color:'#31b404','font-size':'2em'}
 				}
 			],
-			
 			attribute1 : 
 			{
-				name : 'Buono', 
+				name : 'Pleasant', 
 				title : {
-					media : {word : 'Buono'}, 
+					media : {word : 'Pleasant'}, 
 					css : {color:'#0000FF','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
-						media : {word : 'Amore, Piacevole, Fantastico, Meraviglioso'}, 
+						media : {word : 'Joy, Love, Happy, Good'}, 
 						css : {color:'#0000FF','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word : 'Amore'}, 
-					{word : 'Piacevole'}, 
-					{word : 'Fantastico'},
-					{word : 'Meraviglioso'}
+					{word : 'Joy'}, 
+					{word : 'Love'}, 
+					{word : 'Happy'}, 
+					{word : 'Good'}
 				], 
 				//Stimulus css
 				stimulusCss : {color:'#0000FF','font-size':'2em'}
-			},
-			
+			},	
 			attribute2 : 
 			{
-				name : 'Cattivo', 
+				name : 'Unpleasant', 
 				title : {
-					media : {word : 'Cattivo'}, 
+					media : {word : 'Unpleasant'}, 
 					css : {color:'#0000FF','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
-						media : {word : 'Odio, Spiacevole, Orribile, Terribile'}, 
+						media : {word : 'Horrible, Evil, Nasty, Bad'}, 
 						css : {color:'#0000FF','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word : 'Odio'},
-					{word : 'Spiacevole'}, 
-					{word : 'Orribile'},
-					{word : 'Terribile'}
+					{word : 'Horrible'}, 
+					{word : 'Nasty'}, 
+					{word : 'Bad'}, 
+					{word : 'Evil'}
 				], 
 				//Stimulus css
 				stimulusCss : {color:'#0000FF','font-size':'2em'} 
+			},
+			base_url : {//Where are your images at?
+			image : 'https://baranan.github.io/minno-tasks/images/'
 			},
 
 			//practiceTrials are a few trials at the beginning of the task (Sriram & Greenwald recommend 2 trials for each category).
@@ -195,10 +205,10 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			
 			//Whether to start with a practice block.
 			practiceBlock : true, 
-			nPracticeBlockTrials : 16, //Should be at least 8 trials.
+			nPracticeBlockTrials : 8, //Should be at least 8 trials.
 
 			//Number of blocks per focal category-attribute combination.
-			nCategoryAttributeBlocks : 1, 
+			nCategoryAttributeBlocks : 4, 
 
 			//Whether to switch the focal attribute only once in the task (after all the blocks with the first focal attribute), 
 			//Or after every exhaustion of all the category-attribute combinations (e.g., twice if nCategoryAttributeBlocks).
@@ -220,20 +230,18 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			errorBottom : 5, 
 			
 			remindErrorText : '<p align="center" style="font-size:"0.6em"; font-family:arial">' + 
-			'Se commetti un errore, una <font color="#ff0000"><b>X</b></font> rossa apparirà. ' + 
-			"Premi l'altro tasto per continuare.<p/>",
+			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' + 
+			'Press the other key to continue.<p/>',
 	        remindErrorTextTouch : '<p align="center" style="font-size:"1.4em"; font-family:arial">' +
 			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
 			'Touch the other side to continue.<p/>',				
-			base_url : {//Where are your images?
-				image : '/implicit/user/yba/pipexample/biat/images/'
-			}, 
+			
 			ITIDuration : 250, //Duration between trials.
             fontColor : '#000000', //The default color used for printed messages.
 			
 			//Text and style for key instructions displayed about the category labels.
-			leftKeyText : '"E" per tutto il resto', 
-			rightKeyText : '"I" se la parola appartiene', 
+			leftKeyText : '"E" for all else', 
+			rightKeyText : '"I" if item belongs', 
 			keysCss : {'font-size':'0.8em', 'font-family':'courier', color:'#000000'},
 			rightKeyTextTouch : 'Left for all else', 
 			leftKeyTextTouch : 'Right if item belongs', 
@@ -243,7 +251,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			
 			instWidth : 99, //The width of the instructions stimulus
 			
-			finalText : 'Premi la barra spaziatrice per continuare con il prossimo compito', 
+			finalText : 'Press space to continue to the next task', 
 			finalTouchText : 'Touch the bottom green area to continue to the next task',
 
 			touchMaxStimulusWidth : '50%', 
@@ -257,21 +265,21 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			// blockNum, nBlocks, focalAtt, focalCat.
 			// Notice that this is HTML code.
 			instTemplate: '<div><p align="center" style="font-size:20px; font-family:arial"><br/>' +
-				'<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' + 
+				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' + 
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				"Premi con l'indice destro il tasto <b>I</b> per le parole che appartengono alla categoria " + 
-				'<font color="#00cccc">focalAtt</font>, ' + 
-				'e per le parole che appartengono alla categoria <font color="#00cccc">focalCat</font>.<br/>' + 
-				"Premi con l'indice sinistro il tasto <b>E</b> per le parole che non appartengono a queste categorie.<br/><br/>" + 
-				'Se commetti un errore, una <font color="#ff0000"><b>X</b></font> rossa apparirà. ' + 
-				"Premi l'altro tasto per continuare.<br/><br/>" + 
-				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>', 
+				'Put a right finger on the <b>I</b> key for items that belong to the category ' + 
+				'<font color="#0000FF">focalAtt</font>, ' + 
+				'and for items that belong to the category <font color="#31b404">focalCat</font>.<br/>' + 
+				'Put a left finger on the <b>E</b> key for items that do not belong to these categories.<br/><br/>' + 
+				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' + 
+				'Press the other key to continue.<br/><br/>' + 
+				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>', 
             instTemplateTouch: '<div><p align="center" ' +
-				'<br/><font color="#000000"><u>Parte blockNum di nBlocks </u><br/></p>' + 
+				'<br/><font color="#000000"><u>Part blockNum of nBlocks </u><br/></p>' + 
 				'<p align="left" style="margin-left:5px"> ' +
 				'Put a right finger on the <b>right</b> green area for items that belong to the category ' + 
-				'<font color="#00cccc">focalAtt</font>, ' + 
-				'and for items that belong to the category <font color="#00cccc">focalCat</font>.<br/>' + 
+				'<font color="#0000FF">focalAtt</font>, ' + 
+				'and for items that belong to the category <font color="#31b404">focalCat</font>.<br/>' + 
 				'Put a left finger on the <b>left</b> green area for items that do not belong to these categories.<br/>' + 
 				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' + 
 				'Press the other key to continue.<br/>' + 
@@ -303,12 +311,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		
 		// extend the current object with the default
 		_.defaults(piCurrent, options, batObj);
-	// are we on the touch version
-		var isTouch = piCurrent.isTouch;
-		//We use the attribute names a lot, so let's read them here
-		var attribute1 = piCurrent.attribute1;
-		var attribute2 = piCurrent.attribute2;
-		var cats = piCurrent.categories;
+		_.extend(API.script.settings, options.settings);
 		
         /**
         **** For Qualtrics
@@ -332,7 +335,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
             // Transform logs into a string
             // we save as CSV because qualtrics limits to 20K characters and this is more efficient.
             serialize: function (name, logs) {
-                var headers = ['block', 'trial', 'cond', 'comp', 'type', 'cat',  'stim', 'resp', 'err', 'rt', 'fb'];
+                var headers = ['block', 'trial', 'cond', 'type', 'cat',  'stim', 'resp', 'err', 'rt', 'fb'];
                 //console.log(logs);
                 var myLogs = [];
                 var iLog;
