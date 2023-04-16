@@ -1,6 +1,11 @@
-define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
+//YBYB:Created from iat8.js, for Qualtrics
+define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) {
 
 	/**
+	Created by: Yoav Bar-Anan (baranan@gmail.com). Modified by Gal
+	 * @param  {Object} options Options that replace the defaults...
+	 * @return {Object}         PIP script
+	**/
 	A few things that this script does not currently support:
 	The extension does not support a practice block with only two categories. 
 	All the blocks include stimuli from all the categories and all the attributes.
