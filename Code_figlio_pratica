@@ -1,4 +1,4 @@
-define(['pipAPI', 'https://chiaracode.github.io/Code_madre_pratica'
+define(['pipAPI', '/implicit/user/mmarini/mensrights_italy/extensionpractice.js'
 
 ], function(APIConstructor, batExtension){
     var API = new APIConstructor();
