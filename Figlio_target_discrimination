@@ -1,4 +1,4 @@
-define(['pipAPI', 'https://chiaracode.github.io/'], 
+define(['pipAPI', 'https://chiaracode.github.io/BIAT_target_discrimination'], 
 
 function(APIConstructor, batExtension){
     var API = new APIConstructor();
