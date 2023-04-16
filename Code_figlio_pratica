@@ -62,6 +62,8 @@ define(['pipAPI', 'https://chiaracode.github.io/Madre_pratica'
 	
 		
        	practiceBlock : false, 
+	
+	nCategoryAttributeBlocks : 2,
 		
 		base_url : {//Where are your images?
 			image : '/implicit/user/mmarini/private_nancy_consent2/'	},
