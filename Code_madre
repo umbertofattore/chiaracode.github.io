@@ -1,10 +1,26 @@
-//YBYB:Created from iat8.js, for Qualtrics
-define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) {
+define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 
 	/**
-	Created by: Yoav Bar-Anan (baranan@gmail.com). Modified by Gal
-	 * @param  {Object} options Options that replace the defaults...
-	 * @return {Object}         PIP script
+	A few things that this script does not currently support:
+	The extension does not support a practice block with only two categories. 
+	All the blocks include stimuli from all the categories and all the attributes.
+	If there are more than two categories, the extension always includes all the categories in the block: 
+	one as the focal category and all the rest as the non-focal categories. 
+	The number of stimuli of the focal category always equals the number of stimuli of the non-focal categories.
+	The number of stimuli of the focal attribute always equals the number of stimuli of the non-focal attribute.
+	
+	By default: there is only one focal attribute (pleasant), and the order of the focal categories is randomized (they switch every block).
+	
+	To skip a block in the task: press Esc and then Enter. 
+	
+	The script saves a few feedback messages in the explicit table. 
+	The feedback message is always a comparison between the first and the second category. 
+	There are also single scores for each category, 
+	and the results of specific comparisons between the categories. 
+	Run the task in order to learn about the name of these variables, when they are saved at the explicit table.
+	
+	Created by: Yoav Bar-Anan (baranan@gmail.com).
+	Modified by: Gal Maimon
 	**/
 
 	function iatExtension(options)
@@ -16,7 +32,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 		//You can also do that from the outside, with a dedicated jsp file.
 		var batObj = 
 		{
-			istouch:false, //Set whether the task is on a touch device.
+			isTouch:false, //Set whether the task is on a touch device.
 			//Set the canvas of the task
 			canvas : {
 				maxWidth: 725,
@@ -294,7 +310,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 		};
 		
 		// extend the current object with the default
-		_.defaults(piCurrent, options, batObj);
+		_.extend(piCurrent, _.defaults(options, batObj));
 		_.extend(API.script.settings, options.settings);
 		
         /**
