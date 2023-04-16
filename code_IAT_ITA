@@ -1,4 +1,4 @@
-define(['pipAPI', 'https://chiaracode.github.io/Base_code_IAT_ITA'], 
+define(['pipAPI', 'https://chiaracode.github.io/base_code_IAT_ITA'], 
 
 function(APIConstructor, batExtension){
     var API = new APIConstructor();
