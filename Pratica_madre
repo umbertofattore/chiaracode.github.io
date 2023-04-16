@@ -1,5 +1,27 @@
 define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 
+	/**
+	A few things that this script does not currently support:
+	The extension does not support a practice block with only two categories. 
+	All the blocks include stimuli from all the categories and all the attributes.
+	If there are more than two categories, the extension always includes all the categories in the block: 
+	one as the focal category and all the rest as the non-focal categories. 
+	The number of stimuli of the focal category always equals the number of stimuli of the non-focal categories.
+	The number of stimuli of the focal attribute always equals the number of stimuli of the non-focal attribute.
+	
+	By default: there is only one focal attribute (pleasant), and the order of the focal categories is randomized (they switch every block).
+	
+	To skip a block in the task: press Esc and then Enter. 
+	
+	The script saves a few feedback messages in the explicit table. 
+	The feedback message is always a comparison between the first and the second category. 
+	There are also single scores for each category, 
+	and the results of specific comparisons between the categories. 
+	Run the task in order to learn about the name of these variables, when they are saved at the explicit table.
+	
+	Created by: Yoav Bar-Anan (baranan@gmail.com).
+	**/
+
 	function iatExtension(options)
 	{
 		var API = new APIConstructor();
@@ -287,8 +309,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		var attribute1 = piCurrent.attribute1;
 		var attribute2 = piCurrent.attribute2;
 		var cats = piCurrent.categories;
-
-		        /**
+		
+        /**
         **** For Qualtrics
         */
         API.addSettings('onEnd', window.minnoJS.onEnd);
@@ -310,7 +332,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
             // Transform logs into a string
             // we save as CSV because qualtrics limits to 20K characters and this is more efficient.
             serialize: function (name, logs) {
-                var headers = ['block', 'trial', 'cond', 'type', 'cat',  'stim', 'resp', 'err', 'rt', 'fb'];
+                var headers = ['block', 'trial', 'cond', 'comp', 'type', 'cat',  'stim', 'resp', 'err', 'rt', 'fb'];
                 //console.log(logs);
                 var myLogs = [];
                 var iLog;
