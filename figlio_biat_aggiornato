@@ -1,0 +1,77 @@
+define(['pipAPI', 'https://chiaracode.github.io/BIAT_target_discrimination'], 
+
+function(APIConstructor, batExtension){
+    var API = new APIConstructor();
+	var global = API.getGlobal();
+	return batExtension({
+		categories : [  
+			{
+				name : 'Uomo',
+				title : {
+					media : {word : 'Uomo'}, //Name of the category presented in the task.
+					css : {color:'#31b404','font-size':'1.8em'}, //Style of the category title.
+					height : 4, //Used to position the "Or" in the combined block.
+					startStimulus : {
+						media : {word : 'Maschio, Ragazzo, Lui'}, 
+						css : {color:'#31b404','font-size':'1em'}, 
+						height : 2
+					}
+				}, 
+				
+				stimulusMedia : [ //Stimuli content as PIP's media objects
+					{word: 'Maschio'},
+                    {word: 'Ragazzo'},
+                    {word: 'Lui'}  
+                ], 
+				//Stimulus css
+				stimulusCss : {color:'#31b404','font-size':'2em'}
+			},
+			
+			
+			
+			
+			
+				{
+				name : 'Donna', //Category label.
+				title : {
+					media : {word : 'Donna'}, 
+					css : {color:'#31b404','font-size':'1.8em'}, 
+					height : 4,
+					startStimulus : {
+						media : {
+						    word: 'Femmina, Ragazza, Lei'},
+						    //word : 'Republican, Right Wing, George Bush, Conservative'}, 
+						css : {color:'#31b404','font-size':'1em'}, 
+						height : 2
+					}
+				}, 
+				stimulusMedia : [ //Stimuli content as PIP's media objects
+					{word: 'Femmina'},   
+                    {word: 'Ragazza'},
+                    {word: 'Lei'}
+                ], 
+				//Stimulus css
+				stimulusCss : {color:'#31b404','font-size':'2em'}
+			}
+		
+		], 
+		
+		practiceBlock : false, 
+		
+		nCategoryAttributeBlocks : 2,
+		
+		//base_url : {//Where are your images?
+		//	image : '/implicit/user/mmarini/private_nancy_consent2/'		},
+		fb_strong_Att1WithCatB_Att2WithCatA : 'Your data suggest a strong association CATEGORYB-Target and CATEGORYA-Perpetrator.',
+		fb_moderate_Att1WithCatB_Att2WithCatA : 'Your data suggest a moderate association CATEGORYB-Target and CATEGORYA-Perpetrator.',
+		fb_slight_Att1WithCatB_Att2WithCatA : 'Your data suggest a slight association CATEGORYB-Target and CATEGORYA-Perpetrator.',
+		fb_equal_CatAvsCatB : 'Your data suggest a little to no association of the categories CATEGORYA and CATEGORYB with the attributes Target and Perpetrator.',
+		fb_strong_Att1WithCatA_Att2WithCatB : 'Your data suggest a strong association CATEGORYA-Target and CATEGORYB-Perpetrator.',
+		fb_moderate_Att1WithCatA_Att2WithCatB : 'Your data suggest a moderate association CATEGORYA-Target and CATEGORYB-Perpetrator.',
+		fb_slight_Att1WithCatA_Att2WithCatB : 'Your data suggest a slight association CATEGORYA-Target and CATEGORYB-Perpetrator.'
+
+		
+		
+		
+	});
+});
