@@ -1,4 +1,4 @@
-define(['pipAPI', 'chiaracode.github.io/Biat_madre_aggiornato'], 
+define(['pipAPI', 'https://chiaracode.github.io/Madre_aggiornato'], 
 
 function(APIConstructor, batExtension){
     var API = new APIConstructor();
