@@ -293,7 +293,6 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			fb_moderateAssociationForCatWithAtt2 : 'Your data suggest moderate negative automatic evaluation of CATEGORY.',
 			fb_slightAssociationForCatWithAtt2 : 'Your data suggest slight negative automatic evaluation of CATEGORY.',
 
-			
 			//Error messages in the feedback
 			manyErrors: 'There were too many errors made to determine a result.',
 			tooFast: 'There were too many fast trials to determine a result.',
